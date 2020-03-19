@@ -52,13 +52,14 @@
     "spacing": "sm",
     "contents": [
       {
-        "type": "button",
+        "type": "action",
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "uri",
+          "type": "postback",
           "label": "Hello",
-          "uri": "https://linecorp.com"
+          "displayText": "Hello",
+          "data": "Hello"
         }
       },
       {
