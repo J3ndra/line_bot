@@ -1,22 +1,15 @@
 {
   "type": "bubble",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "List Keyword",
-        "weight": "bold"
-      }
-    ]
-  },
   "hero": {
     "type": "image",
-    "url": "https://i.ibb.co/Ch56jvR/scc.png",
+    "url": "https://i.ibb.co/3NpDhXb/qr.png",
     "size": "full",
-    "aspectRatio": "4:3",
-    "aspectMode": "cover"
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://github.com/J3ndra/line_bot"
+    }
   },
   "body": {
     "type": "box",
@@ -24,60 +17,75 @@
     "contents": [
       {
         "type": "text",
-        "text": "This bot welcoming you all",
-        "size": "sm",
-        "color": "#c9302c",
-        "weight": "bold"
+        "text": "SCC Developer Bot",
+        "weight": "bold",
+        "size": "xl"
       },
       {
-        "type": "text",
-        "text": "by: Junianto",
-        "size": "sm",
-        "color": "#c9302c"
-      },
-      {
-        "type": "text",
-        "text": "Here's some list of our keyword",
-        "size": "sm",
-        "wrap": true,
-        "margin": "lg"
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Here's some keyword list you can use!",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "footer": {
     "type": "box",
     "layout": "vertical",
+    "spacing": "sm",
     "contents": [
       {
         "type": "button",
-        "style": "primary",
+        "style": "link",
+        "height": "sm",
         "action": {
-          "type": "postback",
-          "label": "Trial",
-          "displayText": "Trial",
-          "data": "Trial"
+          "type": "uri",
+          "label": "Hello",
+          "uri": "https://linecorp.com"
         }
       },
       {
         "type": "button",
-        "style": "primary",
+        "style": "link",
+        "height": "sm",
         "action": {
-          "type": "postback",
-          "label": "Trial",
-          "displayText": "Trial",
-          "data": "Trial"
+          "type": "uri",
+          "label": "keyword",
+          "uri": "https://linecorp.com"
         }
       },
       {
         "type": "button",
-        "style": "primary",
+        "style": "link",
+        "height": "sm",
         "action": {
-          "type": "postback",
-          "label": "Trial",
-          "displayText": "Trial",
-          "data": "Trial"
+          "type": "uri",
+          "label": "daftar event",
+          "uri": "https://linecorp.com"
         }
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
       }
-    ]
+    ],
+    "flex": 0
   }
 }
