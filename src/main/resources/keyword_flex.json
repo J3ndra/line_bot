@@ -22,6 +22,14 @@
         "size": "xl"
       },
       {
+        "type": "text",
+        "text": "By: Junianto",
+        "size": "xxs",
+        "style": "normal",
+        "weight": "regular",
+        "color": "#e30b0b"
+      },
+      {
         "type": "box",
         "layout": "vertical",
         "margin": "lg",
@@ -56,10 +64,9 @@
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "Hello",
-          "displayText": "Hello",
-          "data": "Hello"
+          "text": "Hello"
         }
       },
       {
@@ -67,10 +74,9 @@
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "Keyword",
-          "displayText": "Keyword",
-          "data": "Keyword"
+          "text": "Keyword"
         }
       },
       {
@@ -78,10 +84,9 @@
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "Lihat Daftar Event",
-          "displayText": "Lihat Daftar Event",
-          "data": "Lihat Daftar Event"
+          "text": "Lihat Daftar Event"
         }
       },
       {
