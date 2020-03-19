@@ -63,23 +63,25 @@
         }
       },
       {
-        "type": "button",
+        "type": "action",
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "uri",
-          "label": "keyword",
-          "uri": "https://linecorp.com"
+          "type": "postback",
+          "label": "Keyword",
+          "displayText": "Keyword",
+          "data": "Keyword"
         }
       },
       {
-        "type": "button",
+        "type": "action",
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "uri",
-          "label": "daftar event",
-          "uri": "https://linecorp.com"
+          "type": "postback",
+          "label": "Lihat Daftar Event",
+          "displayText": "Lihat Daftar Event",
+          "data": "Lihat Daftar Event"
         }
       },
       {
