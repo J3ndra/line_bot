@@ -11,7 +11,38 @@
       }
     ]
   },
+  "hero": {
+    "type": "image",
+    "url": "https://i.ibb.co/3NpDhXb/qr.png",
+    "size": "full",
+    "aspectRatio": "4:3",
+    "aspectMode": "cover"
+  },
   "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "SCC Developer Bot",
+        "text": "This bot welcoming you all",
+        "size": "sm",
+        "color": "#c9302c",
+        "weight": "bold"
+      },
+      {
+        "type": "From us!",
+        "text": "by: Junianto",
+        "size": "sm",
+        "color": "#c9302c"
+      },
+      {
+        "type": "Want to Join Us?",
+        "text": "Contact one of our partner from SCC Developer.",
+        "size": "sm",
+        "wrap": true,
+        "margin": "lg"
+      }
+    ]
   },
   "footer": {
     "type": "box",
