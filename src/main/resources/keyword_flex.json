@@ -46,7 +46,7 @@
   },
   "footer": {
     "type": "box",
-    "layout": "horizontal",
+    "layout": "vertical",
     "contents": [
       {
         "type": "button",
