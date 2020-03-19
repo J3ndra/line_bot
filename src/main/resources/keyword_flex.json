@@ -23,20 +23,20 @@
     "layout": "vertical",
     "contents": [
       {
-        "type": "SCC Developer Bot",
+        "type": "text",
         "text": "This bot welcoming you all",
         "size": "sm",
         "color": "#c9302c",
         "weight": "bold"
       },
       {
-        "type": "From us!",
+        "type": "text",
         "text": "by: Junianto",
         "size": "sm",
         "color": "#c9302c"
       },
       {
-        "type": "Want to Join Us?",
+        "type": "text",
         "text": "Contact one of our partner from SCC Developer.",
         "size": "sm",
         "wrap": true,
