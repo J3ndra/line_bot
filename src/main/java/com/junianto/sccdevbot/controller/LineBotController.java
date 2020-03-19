@@ -9,6 +9,7 @@ import com.junianto.sccdevbot.service.BotService;
 import com.junianto.sccdevbot.service.BotTemplate;
 import com.junianto.sccdevbot.service.DBService;
 import com.linecorp.bot.client.LineSignatureValidator;
+import com.linecorp.bot.model.ReplyMessage;
 import com.linecorp.bot.model.event.FollowEvent;
 import com.linecorp.bot.model.event.JoinEvent;
 import com.linecorp.bot.model.event.MessageEvent;
@@ -206,15 +207,31 @@ public class LineBotController {
                 || msgText.contains("teman")
         ) {
             processText(replyToken, msgText);
-        } else if (msgText.contains("lihat daftar event")) {
+        } else if (msgText.contains("daftar event")) {
             showCarouselEvents(replyToken);
         } else if (msgText.contains("summary")) {
             showEventSummary(replyToken, textMessage);
         } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
             handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
+        } else if (msgText.contains("keyword")) {
+            handlekeywordMessage(replyToken, new UserSource((sender.getUserId())));
         }
         else {
             handleFallbackMessage(replyToken, new UserSource(sender.getUserId()));
+        }
+    }
+
+    private void handlekeywordMessage(String replyToken, Source source) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("keyword_flex.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            botService.reply(replyToken, new FlexMessage("List Keyword", flexContainer));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -222,6 +239,7 @@ public class LineBotController {
         helloMessage(replyToken, source, "Hello there " + sender.getDisplayName() + "! What can i do for you?");
     }
 
+    // handle normal message like hello or etc
     private void helloMessage(String replyToken, Source source, String additionalMessage) {
         if(sender == null) {
             String senderId = source.getSenderId();
