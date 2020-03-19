@@ -13,7 +13,7 @@
   },
   "hero": {
     "type": "image",
-    "url": "https://i.ibb.co/3NpDhXb/qr.png",
+    "url": "https://i.ibb.co/Ch56jvR/scc.png",
     "size": "full",
     "aspectRatio": "4:3",
     "aspectMode": "cover"
@@ -37,7 +37,7 @@
       },
       {
         "type": "text",
-        "text": "Contact one of our partner from SCC Developer.",
+        "text": "Here's some list of our keyword",
         "size": "sm",
         "wrap": true,
         "margin": "lg"
@@ -47,11 +47,10 @@
   "footer": {
     "type": "box",
     "layout": "horizontal",
-    "spacing": "sm",
     "contents": [
       {
         "type": "button",
-        "style": "secondary",
+        "style": "primary",
         "action": {
           "type": "postback",
           "label": "Trial",
@@ -64,9 +63,19 @@
         "style": "primary",
         "action": {
           "type": "postback",
-          "label": "Daftar",
-          "displayText": "Daftar",
-          "data": "Daftar"
+          "label": "Trial",
+          "displayText": "Trial",
+          "data": "Trial"
+        }
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "Trial",
+          "displayText": "Trial",
+          "data": "Trial"
         }
       }
     ]
