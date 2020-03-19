@@ -124,7 +124,7 @@ public class LineBotController {
         String replyToken      = event.getReplyToken();
         MessageContent content = event.getMessage();
         Source source          = event.getSource();
-        String senderId        = source.getSenderId();
+        String senderId        = source.getUserId();
         sender                 = botService.getProfile(senderId);
 
         if(content instanceof TextMessageContent) {
