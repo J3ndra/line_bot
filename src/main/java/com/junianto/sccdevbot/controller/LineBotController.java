@@ -205,10 +205,27 @@ public class LineBotController {
         } else if (msgText.contains("summary")) {
             showEventSummary(replyToken, textMessage);
         } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
-
+            handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
         }
         else {
             handleFallbackMessage(replyToken, new UserSource(sender.getUserId()));
+        }
+    }
+
+    private void handleHelloMessage(String replyToken, Source source) {
+        helloMessage(replyToken, source, "Hello there " + sender.getDisplayName() + "! What can i do for you?");
+    }
+
+    private void helloMessage(String replyToken, Source source, String additionalMessage) {
+        if(sender == null) {
+            String senderId = source.getSenderId();
+            sender          = botService.getProfile(senderId);
+        }
+
+        if (additionalMessage != null) {
+            List<Message> messages = new ArrayList<>();
+            messages.add(new TextMessage(additionalMessage));
+            botService.reply(replyToken, messages);
         }
     }
 
