@@ -36,7 +36,7 @@ public class BotTemplate {
         return new TemplateMessage(actionTitle, buttonsTemplate);
     }
 
-    public TemplateMessage greetingMessage(Source source, UserProfileResponse sender) {
+    public TemplateMessage dicodingMessage(Source source, UserProfileResponse sender) {
         String message  = "Hi %s! Ayo ikut dicoding event, aku bisa cariin kamu teman.";
         String action   = "Lihat daftar event";
 

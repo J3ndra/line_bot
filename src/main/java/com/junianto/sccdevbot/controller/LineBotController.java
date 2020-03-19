@@ -104,7 +104,7 @@ public class LineBotController {
             sender          = botService.getProfile(senderId);
         }
 
-        TemplateMessage greetingMessage = botTemplate.greetingMessage(source, sender);
+        TemplateMessage greetingMessage = botTemplate.dicodingMessage(source, sender);
 
         if (additionalMessage != null) {
             List<Message> messages = new ArrayList<>();
@@ -204,7 +204,10 @@ public class LineBotController {
             showCarouselEvents(replyToken);
         } else if (msgText.contains("summary")) {
             showEventSummary(replyToken, textMessage);
-        } else {
+        } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
+
+        }
+        else {
             handleFallbackMessage(replyToken, new UserSource(sender.getUserId()));
         }
     }
