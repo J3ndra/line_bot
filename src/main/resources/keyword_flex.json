@@ -52,7 +52,7 @@
     "spacing": "sm",
     "contents": [
       {
-        "type": "action",
+        "type": "button",
         "style": "link",
         "height": "sm",
         "action": {
@@ -63,7 +63,7 @@
         }
       },
       {
-        "type": "action",
+        "type": "button",
         "style": "link",
         "height": "sm",
         "action": {
@@ -74,7 +74,7 @@
         }
       },
       {
-        "type": "action",
+        "type": "button",
         "style": "link",
         "height": "sm",
         "action": {
