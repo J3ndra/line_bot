@@ -214,18 +214,18 @@ public class LineBotController {
         } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
             handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
         } else if (msgText.contains("keyword")) {
-            handlekeywordMessage(replyToken, new UserSource((sender.getUserId())));
+            handlekeywordMessage(replyToken);
         }
         else {
             handleFallbackMessage(replyToken, new UserSource(sender.getUserId()));
         }
     }
 
-    private void handlekeywordMessage(String replyToken, Source source) {
+    private void handlekeywordMessage(String replyToken) {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
             String encoding         = StandardCharsets.UTF_8.name();
-            String flexTemplate     = IOUtils.toString(classLoader.getResourceAsStream("flex_event.json"), encoding);
+            String flexTemplate     = IOUtils.toString(classLoader.getResourceAsStream("keyword_flex.json"), encoding);
 
             ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
             FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
