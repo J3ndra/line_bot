@@ -160,11 +160,14 @@ public class LineBotController {
                 || msgText.contains("teman")
         ) {
             processText(replyToken, textMessage);
-        } else if (msgText.contains("lihat daftar event")) {
+        } else if (msgText.contains("lihat daftar event") || msgText.contains("look event")) {
             showCarouselEvents(replyToken);
         } else if (msgText.contains("summary")) {
             showEventSummary(replyToken, textMessage);
-        } else {
+        } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
+            handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
+        }
+        else {
             handleFallbackMessage(replyToken, new GroupSource(groupId, sender.getUserId()));
         }
     }
@@ -187,7 +190,10 @@ public class LineBotController {
             showCarouselEvents(replyToken);
         } else if (msgText.contains("summary")) {
             showEventSummary(replyToken, textMessage);
-        } else {
+        } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
+            handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
+        }
+        else {
             handleFallbackMessage(replyToken, new RoomSource(roomId, sender.getUserId()));
         }
     }
