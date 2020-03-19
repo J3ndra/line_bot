@@ -53,6 +53,23 @@ public class BotTemplate {
         return createButton(message, action, action);
     }
 
+    public TemplateMessage greetingMessage(Source source, UserProfileResponse sender) {
+        String message = "Hello %s! I think you are new here, let me help!";
+        String action = "Show Keyword!";
+
+        if (source instanceof GroupSource) {
+            message = String.format(message, "Group");
+        } else if (source instanceof RoomSource) {
+            message = String.format(message, "Room");
+        } else if(source instanceof UserSource) {
+            message = String.format(message, sender.getDisplayName());
+        } else {
+            message = "Unknown Message Source!";
+        }
+
+        return createButton(message, action, action);
+    }
+
     public TemplateMessage carouselEvents(DicodingEvents dicodingEvents) {
         int i;
         String image, owner, name, id, link;

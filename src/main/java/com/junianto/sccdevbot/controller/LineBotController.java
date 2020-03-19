@@ -104,7 +104,7 @@ public class LineBotController {
             sender          = botService.getProfile(senderId);
         }
 
-        TemplateMessage greetingMessage = botTemplate.dicodingMessage(source, sender);
+        TemplateMessage greetingMessage = botTemplate.greetingMessage(source, sender);
 
         if (additionalMessage != null) {
             List<Message> messages = new ArrayList<>();
