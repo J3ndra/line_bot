@@ -224,7 +224,8 @@ public class LineBotController {
     private void handlekeywordMessage(String replyToken, Source source) {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
-            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("keyword_flex.json"));
+            String encoding         = StandardCharsets.UTF_8.name();
+            String flexTemplate     = IOUtils.toString(classLoader.getResourceAsStream("flex_event.json"), encoding);
 
             ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
             FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);

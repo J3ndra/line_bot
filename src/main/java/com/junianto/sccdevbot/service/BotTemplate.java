@@ -55,7 +55,7 @@ public class BotTemplate {
 
     public TemplateMessage greetingMessage(Source source, UserProfileResponse sender) {
         String message = "Hello %s! I think you are new here, let me help!";
-        String action = "Show Keyword!";
+        String action = "Show Keyword";
 
         if (source instanceof GroupSource) {
             message = String.format(message, "Group");
