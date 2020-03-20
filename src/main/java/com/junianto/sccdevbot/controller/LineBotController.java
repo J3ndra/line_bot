@@ -167,6 +167,12 @@ public class LineBotController {
             showEventSummary(replyToken, textMessage);
         } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
             handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
+        } else if (msgText.contains("keyword")) {
+            handlekeywordMessage(replyToken);
+        } else if (msgText.contains("bored") || msgText.contains(("bosan")) || msgText.contains("boring") || msgText.contains("bore") || msgText.contains("suwung")) {
+            handleBoredMessage(replyToken, new UserSource(sender.getUserId()));
+        } else if (msgText.contains("about") || msgText.contains("tentang")) {
+            handleAboutMessage(replyToken, new UserSource(sender.getUserId()));
         }
         else {
             handleFallbackMessage(replyToken, new GroupSource(groupId, sender.getUserId()));
@@ -187,16 +193,28 @@ public class LineBotController {
                 || msgText.contains("teman")
         ) {
             processText(replyToken, msgText);
-        } else if (msgText.contains("lihat daftar event")) {
+        } else if (msgText.contains("lihat daftar event") || msgText.contains("event list")) {
             showCarouselEvents(replyToken);
         } else if (msgText.contains("summary")) {
             showEventSummary(replyToken, textMessage);
         } else if (msgText.contains("hello") || msgText.contains("halo") || msgText.contains("hai") || msgText.contains("hi")) {
             handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
+        } else if (msgText.contains("keyword")) {
+            handlekeywordMessage(replyToken);
+        } else if (msgText.contains("bored") || msgText.contains(("bosan")) || msgText.contains("boring") || msgText.contains("bore") || msgText.contains("suwung")) {
+            handleBoredMessage(replyToken, new UserSource(sender.getUserId()));
+        } else if (msgText.contains("about") || msgText.contains("tentang")) {
+            handleAboutMessage(replyToken, new UserSource(sender.getUserId()));
         }
         else {
             handleFallbackMessage(replyToken, new RoomSource(roomId, sender.getUserId()));
         }
+    }
+
+    private void handleAboutMessage(String replyToken, UserSource userSource) {
+        helloMessage(replyToken, userSource, "Hello " + sender.getDisplayName() + ". \n" +
+                "This bot is used to improve our skill in java! If you wan't to know more about our project, type 'bored'. If you wan't to know some event by dicoding, type 'event list'. And last, type 'keyword' for hint.\n" +
+                "Regrads: J3ndra");
     }
 
     private void handleOneOnOneChats(String replyToken, String textMessage) {
@@ -215,9 +233,28 @@ public class LineBotController {
             handleHelloMessage(replyToken, new UserSource((sender.getUserId())));
         } else if (msgText.contains("keyword")) {
             handlekeywordMessage(replyToken);
+        } else if (msgText.contains("bored") || msgText.contains(("bosan")) || msgText.contains("boring") || msgText.contains("bore") || msgText.contains("suwung")) {
+            handleBoredMessage(replyToken, new UserSource(sender.getUserId()));
+        } else if (msgText.contains("about") || msgText.contains("tentang")) {
+            handleAboutMessage(replyToken, new UserSource(sender.getUserId()));
         }
         else {
             handleFallbackMessage(replyToken, new UserSource(sender.getUserId()));
+        }
+    }
+
+    private void handleBoredMessage(String replyToken, UserSource userSource) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String encoding         = StandardCharsets.UTF_8.name();
+            String flexTemplate     = IOUtils.toString(classLoader.getResourceAsStream("carousel_flex.json"), encoding);
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            botService.reply(replyToken, new FlexMessage("You bored right?", flexContainer));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

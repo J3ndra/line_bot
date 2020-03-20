@@ -1,0 +1,146 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.ibb.co/jL4qVgp/java2.png",
+        "position": "relative",
+        "align": "center",
+        "gravity": "center",
+        "size": "full",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Line Bot",
+            "size": "xl",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "Line Bot Using Java",
+            "color": "#adadad"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Check this repository",
+              "uri": "https://github.com/J3ndra/line_bot",
+              "altUri": {
+                "desktop": "https://github.com/J3ndra/line_bot"
+              }
+            },
+            "position": "relative",
+            "style": "link"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.ibb.co/0B25Mmf/js2.png",
+        "position": "relative",
+        "align": "center",
+        "gravity": "center",
+        "size": "full",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Discord Bot",
+            "size": "xl",
+            "weight": "bold",
+            "style": "normal"
+          },
+          {
+            "type": "text",
+            "text": "Discord Bot Using JavaScript",
+            "color": "#adadad"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Check This Repository",
+              "uri": "https://github.com/J3ndra/discord_bot",
+              "altUri": {
+                "desktop": "https://github.com/J3ndra/discord_bot"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.ibb.co/wrr5Lvj/fossasia.jpg",
+        "position": "relative",
+        "gravity": "center",
+        "size": "full",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Mobile Apps",
+            "size": "xl",
+            "weight": "bold",
+            "style": "normal"
+          },
+          {
+            "type": "text",
+            "text": "Mobile Apps By Fossasia",
+            "color": "#adadad"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Check This Repository",
+              "uri": "https://github.com/J3ndra/fossasia",
+              "altUri": {
+                "desktop": "https://github.com/J3ndra/fossasia"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

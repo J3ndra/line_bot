@@ -90,6 +90,26 @@
         }
       },
       {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "Bored",
+          "text": "Bored"
+        }
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "About",
+          "text": "About"
+        }
+      },
+      {
         "type": "spacer",
         "size": "sm"
       }
